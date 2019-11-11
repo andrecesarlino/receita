@@ -15,7 +15,7 @@ class CreateCulturasTable extends Migration
     {
         Schema::create('culturas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('cultura_descricao',150);
+            $table->string('descricao',150);
             $table->unsignedbigInteger('id_praga');
             $table->foreign('id_praga')->references('id')->on('pragas')->onDelete('cascade');
             $table->timestamps();

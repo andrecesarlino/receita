@@ -15,12 +15,11 @@ class CreateReceitasProdutosTable extends Migration
     {
         Schema::create('receitas_produtos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('numero');
-            $table->integer('valor');
-            $table->unsignedbigInteger('id_pessoa');
-            $table->unsignedbigInteger('id_cultura');
-            $table->foreign('id_pessoa')->references('id')->on('pessoas')->onDelete('cascade');
-            $table->foreign('id_cultura')->references('id')->on('culturas')->onDelete('cascade');
+            $table->unsignedbigInteger('id_receita');
+            $table->unsignedbigInteger('id_produto');
+            $table->integer('quantidade');
+            $table->foreign('id_receita')->references('id')->on('receitas')->onDelete('cascade');
+            $table->foreign('id_produto')->references('id')->on('produtos')->onDelete('cascade');
             $table->timestamps();
         });
     }
