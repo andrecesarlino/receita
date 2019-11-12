@@ -15,13 +15,20 @@ use Illuminate\Http\Request;
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
-
 Route::post('register', 'Auth\RegisterController@register');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout');
 
-Route::get('cidades', 'CidadeController@index');
-Route::get('cidades/{id}', 'CidadeController@show');
-Route::post('cidades', 'CidadeController@store');
-Route::put('cidades/{id}', 'CidadeController@update');
-Route::delete('cidades/{id}', 'CidadeController@delete');
+Route::group(['middleware' => 'auth:api'], function() {
+
+
+
+});
+
+Route::get('cidade', 'CidadeController@index');
+Route::get('cidade/{id}', 'CidadeController@show');
+Route::post('cidade', 'CidadeController@store');
+Route::put('cidade/{id}', 'CidadeController@update');
+Route::delete('cidade/{id}', 'CidadeController@delete');
+
+
