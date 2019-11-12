@@ -22,15 +22,15 @@ class CidadeController extends Controller
         return Cidade::create($request->all());
     }
 
-    public function update(Request $request, Cidade $cidade)
+    public function update(Request $request, Cidade $id)
     {
-        $cidade->update($request->all());
-        return $cidade;
+        $id->update($request->all());
+        return $id;
     }
 
-    public function delete(Cidade $cidade)
+    public function delete(Cidade $id)
     {
-        $cidade->delete();
+        $id->delete();
         return response()->json(null, 204);
     }
 }

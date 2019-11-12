@@ -21,14 +21,16 @@ Route::post('logout', 'Auth\LoginController@logout');
 
 Route::group(['middleware' => 'auth:api'], function() {
 
+    Route::get('cidade', 'CidadeController@index');
+    Route::get('cidade/{id}', 'CidadeController@show');
+    Route::post('cidade', 'CidadeController@store');
+    Route::put('cidade/{id}', 'CidadeController@update');
+    Route::delete('cidade/{id}', 'CidadeController@delete');
+
 
 
 });
 
-Route::get('cidade', 'CidadeController@index');
-Route::get('cidade/{id}', 'CidadeController@show');
-Route::post('cidade', 'CidadeController@store');
-Route::put('cidade/{id}', 'CidadeController@update');
-Route::delete('cidade/{id}', 'CidadeController@delete');
+
 
 
