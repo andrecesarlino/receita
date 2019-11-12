@@ -28,6 +28,13 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::delete('cidade/{id}', 'CidadeController@delete');
 
 
+    Route::get('pessoa', 'PessoaController@index');
+    Route::get('pessoa/{id}', 'PessoaController@show');
+    Route::post('pessoa', 'PessoaController@store');
+    Route::put('pessoa/{id}', 'PessoaController@update');
+    Route::delete('pessoa/{id}', 'PessoaController@delete');
+
+
 
 });
 
