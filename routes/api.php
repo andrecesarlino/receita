@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +12,16 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::post('register', 'Auth\RegisterController@register');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout');
+
+Route::get('cidades', 'CidadeController@index');
+Route::get('cidades/{id}', 'CidadeController@show');
+Route::post('cidades', 'CidadeController@store');
+Route::put('cidades/{id}', 'CidadeController@update');
+Route::delete('cidades/{id}', 'CidadeController@delete');
