@@ -34,6 +34,12 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::put('pessoa/{id}', 'PessoaController@update');
     Route::delete('pessoa/{id}', 'PessoaController@delete');
 
+    Route::get('praga', 'PragaController@index');
+    Route::get('praga/{id}', 'PragaController@show');
+    Route::post('praga', 'PragaController@store');
+    Route::put('praga/{id}', 'PragaController@update');
+    Route::delete('praga/{id}', 'PragaController@delete');
+
 
 
 });
