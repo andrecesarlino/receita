@@ -49,6 +49,13 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::put('cultura/{id}', 'CulturaController@update');
     Route::delete('cultura/{id}', 'CulturaController@delete');
 
+    //RECEITA
+    Route::get('receita', 'ReceitaController@index');
+    Route::get('receita/{id}', 'ReceitaController@show');
+    Route::post('receita', 'ReceitaController@store');
+    Route::put('receita/{id}', 'ReceitaController@update');
+    Route::delete('receita/{id}', 'ReceitaController@delete');
+
 
 });
 
