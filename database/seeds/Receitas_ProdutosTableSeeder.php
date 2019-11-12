@@ -14,7 +14,7 @@ class Receitas_ProdutosTableSeeder extends Seeder
     {
         $faker = Faker::create('App\Receita_produto');
         for ($i = 1; $i <= 10; $i++) {
-            DB::table('receitas_produtos')->insert([
+            DB::table('receitas_prods')->insert([
                 'id'=>$i,
                 'id_receita'=> $i,
                 'id_produto'=> $i,

@@ -63,6 +63,13 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::put('produto/{id}', 'ProdutoController@update');
     Route::delete('produto/{id}', 'ProdutoController@delete');
 
+    //RECEITA_PRODUTO
+    Route::get('ReceitasProduto', 'ReceitasProdController@index');
+    Route::get('ReceitasProduto/{id}', 'ReceitasProdController@show');
+    Route::post('ReceitasProduto', 'ReceitasProdController@store');
+    Route::put('ReceitasProduto/{id}', 'ReceitasProdController@update');
+    Route::delete('ReceitasProduto/{id}', 'ReceitasProdController@delete');
+
 
 });
 
